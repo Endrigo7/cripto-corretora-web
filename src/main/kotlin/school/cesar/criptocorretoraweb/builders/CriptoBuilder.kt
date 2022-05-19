@@ -11,11 +11,7 @@ class CriptoBuilder {
 
     fun buildCripto(nome: String, contacaoInicialEmDollar: BigDecimal): Cripto =
         Cripto(
-            id = criptoNumero,
             nome = nome,
             cotacaoAtualEmDollar = contacaoInicialEmDollar
         )
-
-    private fun calculaIdCripto(): Long =
-        ++criptoNumero
 }

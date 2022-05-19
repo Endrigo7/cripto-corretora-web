@@ -6,8 +6,9 @@ import javax.persistence.*
 @Entity
 @Table
 data class Carteira(
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     var id: Long? = null,
 

@@ -5,8 +5,10 @@ import javax.persistence.*
 @Entity
 @Table(name = "USUARIO")
 data class Usuario(
+
     @Id
-    val id: Long,
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    var id: Long? = null,
 
     @Column
     val cpf: String,

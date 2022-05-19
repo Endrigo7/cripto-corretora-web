@@ -17,10 +17,11 @@ class CriptoService(
     fun add(nome: String, contacaoInicialEmDollar: BigDecimal) {
         val cripto = criptoBuilder.buildCripto(nome, contacaoInicialEmDollar)
         criptoValidador.valida(cripto)
-        criptoRepository.add(cripto)
+        criptoRepository.save(cripto)
     }
 
     fun buscarPorId(id: Long): Cripto =
-        criptoRepository.buscarPeloId(id)
-            ?: throw CriptoInvalidaException("Id não existente")
+        criptoRepository.findById(id)
+            .orElseThrow { throw CriptoInvalidaException("Id não existente") }
+
 }

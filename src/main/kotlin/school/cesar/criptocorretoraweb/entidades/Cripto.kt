@@ -1,16 +1,14 @@
 package school.cesar.criptocorretoraweb.entidades
 
 import java.math.BigDecimal
-import javax.persistence.Column
-import javax.persistence.Entity
-import javax.persistence.Id
-import javax.persistence.Table
+import javax.persistence.*
 
 @Entity
 @Table(name= "CRIPTO_MOEDAS")
 data class Cripto(
     @Id
-    val id: Long,
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    var id: Long? = null,
 
     @Column
     val nome: String,
