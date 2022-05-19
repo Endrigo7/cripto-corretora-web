@@ -7,6 +7,7 @@ import org.apache.http.HttpStatus
 import org.hamcrest.Matchers.containsString
 import org.hamcrest.Matchers.equalTo
 import org.junit.jupiter.api.Test
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
 import org.springframework.test.context.jdbc.Sql
 
 @Sql("/data.sql")
@@ -23,6 +24,4 @@ class CriptoControllerTest : BaseTest() {
             body(containsString("1"))
         }
     }
-
-
 }

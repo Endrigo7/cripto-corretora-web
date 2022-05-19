@@ -14,10 +14,11 @@ class UsuarioService(
 
     fun adicionar(usuario: Usuario) {
         usuarioValidator.valida(usuario)
-        usuarioRepository.add(usuario)
+        usuarioRepository.save(usuario)
     }
 
     fun buscarPorId(id: Long): Usuario =
-        usuarioRepository.buscarPorId(id)
-            ?: throw UsuarioInvalidoException("Id Não encontrado")
+        usuarioRepository.findById(id).orElseThrow {
+            throw UsuarioInvalidoException("Id Não encontrado")
+        }
 }

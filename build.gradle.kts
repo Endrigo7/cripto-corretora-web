@@ -36,11 +36,9 @@ dependencies {
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-
 	implementation("com.h2database:h2:2.1.210")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
-	testImplementation("io.rest-assured:kotlin-extensions:5.0.1")
 
 	componentTestImplementation(sourceSets["test"].output)
 	componentTestImplementation("org.springframework.boot:spring-boot-starter-test")
